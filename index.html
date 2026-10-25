@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charlette Webb | Official VIP Lounge, Live Stream Schedule & Creator Hub</title>
+  <meta name="description" content="Official creator hub and VIP community lounge for Charlette Webb. Live nightly 8:00 PM – 3:00 AM EST. Join the official Discord VIP Club, book 1-on-1 video calls, and access exclusive drops." />
+  <link rel="icon" type="image/png" href="assets/avatar.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-deep: #0b0512;
+      --bg-card: rgba(24, 11, 38, 0.85);
+      --bg-glass: rgba(36, 15, 56, 0.65);
+      --pink: #ec4899;
+      --pink-hot: #ff1964;
+      --cyan: #00f2fe;
+      --gold: #eab308;
+      --emerald: #10b981;
+      --text-main: #fdf2f8;
+      --text-muted: #d8b4e2;
+      --border-glow: rgba(236, 72, 153, 0.38);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-deep);
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(236, 72, 153, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 85% 20%, rgba(0, 242, 254, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(234, 179, 8, 0.12) 0%, transparent 50%);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* Top Live Status Bar */
+    .topbar {
+      background: linear-gradient(90deg, #9d174d, #ec4899, #7e22ce);
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      background: #4ade80;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 10px #4ade80;
+      animation: pulse 1.6s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.65; }
+    }
+
+    /* Navigation */
+    header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .brand img {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 2px solid var(--pink);
+      box-shadow: 0 0 16px rgba(236, 72, 153, 0.5);
+      object-fit: cover;
+    }
+    .brand-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, #fff, #fbcfe8, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-radius: 999px;
+      transition: all 0.2s;
+    }
+    .nav-links a:hover {
+      color: #fff;
+      background: rgba(236, 72, 153, 0.18);
+    }
+    .btn-discord-nav {
+      background: linear-gradient(135deg, #5865F2, #ec4899) !important;
+      color: #fff !important;
+      padding: 10px 20px !important;
+      font-weight: 700 !important;
+      box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+    }
+
+    /* Hero Banner */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .hero-banner-wrap {
+      margin-top: 10px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid var(--border-glow);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 35px rgba(236, 72, 153, 0.25);
+      background: #140821;
+    }
+    .hero-banner-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Hero Intro & Quick Actions */
+    .hero-cta-box {
+      margin-top: -32px;
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(145deg, rgba(28, 12, 46, 0.96), rgba(16, 7, 28, 0.96));
+      border: 1px solid var(--border-glow);
+      border-radius: 22px;
+      padding: 32px;
+      max-width: 1040px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+      text-align: center;
+    }
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .badge {
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .badge-pink { background: rgba(236, 72, 153, 0.2); color: #f9a8d4; border: 1px solid rgba(236, 72, 153, 0.5); }
+    .badge-cyan { background: rgba(0, 242, 254, 0.14); color: var(--cyan); border: 1px solid rgba(0, 242, 254, 0.4); }
+    .badge-gold { background: rgba(234, 179, 8, 0.18); color: #fde047; border: 1px solid rgba(234, 179, 8, 0.45); }
+
+    .hero-cta-box h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .hero-cta-box p {
+      color: var(--text-muted);
+      font-size: 1.08rem;
+      max-width: 740px;
+      margin: 0 auto 26px;
+    }
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 28px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, #ff1964, #ec4899, #9333ea);
+      color: #fff;
+      box-shadow: 0 10px 28px rgba(236, 72, 153, 0.45);
+    }
+    .btn-cyan {
+      background: linear-gradient(135deg, #0284c7, #00f2fe);
+      color: #061320;
+      box-shadow: 0 10px 28px rgba(0, 242, 254, 0.3);
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #eab308, #f59e0b);
+      color: #1a0b2e;
+      box-shadow: 0 10px 28px rgba(234, 179, 8, 0.35);
+    }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    /* Section Headers */
+    .section {
+      padding: 64px 0 24px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 10px;
+    }
+    .section-header p {
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* VIP Club & C2C Tiers (Whop & Discord Ready) */
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+      gap: 22px;
+    }
+    .tier-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 20px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.45);
+    }
+    .tier-card.featured {
+      border: 2px solid var(--gold);
+      box-shadow: 0 16px 40px rgba(234, 179, 8, 0.22);
+    }
+    .tier-ribbon {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--gold);
+      color: #160726;
+      font-size: 0.72rem;
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+    .tier-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .tier-price {
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: var(--pink);
+      margin-bottom: 14px;
+    }
+    .tier-price span {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .tier-list {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .tier-list li {
+      padding: 6px 0;
+      font-size: 0.94rem;
+      color: #f3e8ff;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .tier-list li::before {
+      content: "✦";
+      color: var(--cyan);
+      font-weight: bold;
+    }
+
+    /* 18+ Direct Links & Live Cam Hub */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 16px;
+    }
+    .link-card {
+      background: linear-gradient(135deg, rgba(35, 14, 54, 0.92), rgba(20, 9, 33, 0.92));
+      border: 1px solid rgba(236, 72, 153, 0.35);
+      border-radius: 16px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      transition: all 0.2s ease;
+    }
+    .link-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--cyan);
+      box-shadow: 0 12px 28px rgba(236, 72, 153, 0.3);
+    }
+    .link-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .link-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: rgba(236, 72, 153, 0.18);
+      border: 1px solid rgba(236, 72, 153, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+    }
+    .link-name {
+      font-weight: 800;
+      font-size: 1.04rem;
+      color: #fff;
+    }
+    .link-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .link-arrow {
+      background: rgba(255,255,255,0.08);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--cyan);
+      white-space: nowrap;
+    }
+
+    /* Gallery & Schedule Showcase */
+    .showcase-two-col {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    @media (max-width: 860px) {
+      .showcase-two-col { grid-template-columns: 1fr; }
+    }
+    .showcase-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 20px;
+      padding: 20px;
+      overflow: hidden;
+    }
+    .showcase-card img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .photo-item {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border-glow);
+      aspect-ratio: 4 / 5;
+      background: #170926;
+      position: relative;
+    }
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .photo-item:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 72px;
+      border-top: 1px solid rgba(236, 72, 153, 0.22);
+      padding: 36px 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .footer-links a:hover { color: #fff; text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <span class="pulse-dot"></span>
+    <span>LIVE STREAM SCHEDULE: EVERY NIGHT 8:00 PM – 3:00 AM EST • JOIN THE OFFICIAL DISCORD LOUNGE FOR INSTANT ALERTS</span>
+  </div>
+
+  <header>
+    <a href="/" class="brand">
+      <img src="assets/avatar.png" alt="Charlette Webb" />
+      <div>
+        <div class="brand-title">CHARLETTE WEBB</div>
+        <div class="brand-sub">Official VIP Club & Creator Hub</div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#vip-tiers">VIP Club & 1-on-1 Calls</a>
+      <a href="#all-links">Official Links & Cam Rooms</a>
+      <a href="#schedule">Schedule & Menu</a>
+      <a href="#gallery">Studio Gallery</a>
+      <a href="https://discord.gg/TBHabwmhu8" target="_blank" rel="noopener" class="btn-discord-nav">💬 Join VIP Discord</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Hero Banner matching Discord & Telegram -->
+    <div class="hero-banner-wrap">
+      <img src="assets/welcome_banner.jpg" alt="Charlette Webb Official VIP Lounge Banner" />
+    </div>
+
+    <div class="hero-cta-box">
+      <div class="hero-badges">
+        <span class="badge badge-pink">👑 8+ Years Industry Creator</span>
+        <span class="badge badge-cyan">🕗 Live Nightly 8PM – 3AM EST</span>
+        <span class="badge badge-gold">🎬 700+ Exclusive Video Vault</span>
+      </div>
+      <h1>Welcome to Charlette Webb's Inner Circle</h1>
+      <p>
+        Full-time creator & livestreamer for 8+ years. Join my official <strong>VIP Discord Community</strong> for live stream alerts, interactive daily games, private 1-on-1 Cam-to-Cam sessions, and my 700+ video archive.
+      </p>
+      <div class="cta-row">
+        <a href="https://discord.gg/TBHabwmhu8" target="_blank" rel="noopener" class="btn btn-primary">
+          💬 Join Official Discord VIP Lounge
+        </a>
+        <a href="#all-links" class="btn btn-cyan">
+          🔥 Explore All Live Cam & VIP Links
+        </a>
+        <a href="#vip-tiers" class="btn btn-gold">
+          📹 Book 1-on-1 Cam-to-Cam / VIP Pass
+        </a>
+      </div>
+    </div>
+
+    <!-- VIP Passes & 1-on-1 Video Call Tiers (Whop & Discord Integrated) -->
+    <section id="vip-tiers" class="section">
+      <div class="section-header">
+        <h2>💎 Official VIP Passes, 1-on-1 Video Calls & Mega-Vault</h2>
+        <p>Unlock instant Discord roles, private 1-on-1 HD Cam-to-Cam rooms, or grab my complete 700+ video archive.</p>
+      </div>
+
+      <div class="tiers-grid">
+        <div class="tier-card">
+          <div>
+            <div class="tier-title">🔥 Inner Circle VIP Pass</div>
+            <div class="tier-price">$19.99 <span>/ month</span></div>
+            <ul class="tier-list">
+              <li>Instant <strong>@🔥 VIP Role</strong> in Discord</li>
+              <li>Unlocks private <strong>#👑-vip-whale-lounge</strong></li>
+              <li>Unlocks <strong>#🔐-vip-uncensored-vault</strong> drops</li>
+              <li>Priority custom video & item requests</li>
+              <li>Automatic Cam Live & Drop notifications</li>
+            </ul>
+          </div>
+          <a href="https://discord.gg/TBHabwmhu8" target="_blank" rel="noopener" class="btn btn-primary">Unlock in Discord</a>
+        </div>
+
+        <div class="tier-card featured">
+          <div class="tier-ribbon">Most Popular</div>
+          <div>
+            <div class="tier-title">📹 1-on-1 Cam-to-Cam Show</div>
+            <div class="tier-price">$60 – $150 <span>/ session</span></div>
+            <ul class="tier-list">
+              <li><strong>10-Min 1-on-1 C2C Video Call:</strong> $60</li>
+              <li><strong>20-Min 1-on-1 C2C Video Call:</strong> $100</li>
+              <li><strong>30-Min VIP C2C + Interactive Control:</strong> $150</li>
+              <li>Hosted in a locked 2-person HD Discord room</li>
+              <li>Includes free <strong>@💎 Diamond Whale</strong> role upgrade!</li>
+            </ul>
+          </div>
+          <a href="https://discord.gg/TBHabwmhu8" target="_blank" rel="noopener" class="btn btn-cyan">📹 Book 1-on-1 C2C in Discord</a>
+        </div>
+
+        <div class="tier-card">
+          <div>
+            <div class="tier-title">💎 Diamond Whale Club</div>
+            <div class="tier-price">$50+ <span>/ supporter tier</span></div>
+            <ul class="tier-list">
+              <li>Permanent <strong>@💎 Diamond Whale</strong> role</li>
+              <li>Featured in <strong>#🏆-whale-tipper-hall-of-fame</strong></li>
+              <li>Full access to VIP Vault & Private Voice Lounge</li>
+              <li>Direct 1-on-1 priority order channel</li>
+              <li>5x Bonus Entries in every VIP Raffle</li>
+            </ul>
+          </div>
+          <a href="https://cash.app/$CharletteWebb" target="_blank" rel="noopener" class="btn btn-gold">💸 Unlock via $CharletteWebb</a>
+        </div>
+
+        <div class="tier-card">
+          <div>
+            <div class="tier-title">🎬 All 700+ Videos Mega-Deal</div>
+            <div class="tier-price">$350 <span>/ full archive</span></div>
+            <ul class="tier-list">
+              <li>Unlocks <strong>every single video (700+ clips)</strong> from my 8-year archive</li>
+              <li>Instant lifetime access via CashApp deal</li>
+              <li>Includes automatic <strong>@💎 Diamond Whale</strong> status</li>
+              <li>Open a ticket in Discord with your receipt for instant delivery</li>
+            </ul>
+          </div>
+          <a href="https://cash.app/$CharletteWebb" target="_blank" rel="noopener" class="btn btn-primary">🎬 Claim $350 Mega-Deal</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- All Official Links Hub (Replaces Linktree) -->
+    <section id="all-links" class="section">
+      <div class="section-header">
+        <h2>🔗 All Official Links, Live Cam Sites & VIP Stores (18+)</h2>
+        <p>Tap any platform below to join my nightly live stream (8:00 PM – 3:00 AM EST), subscribe to VIP pages, or order customs.</p>
+      </div>
+
+      <div class="links-grid">
+        <a href="https://discord.gg/TBHabwmhu8" target="_blank" rel="noopener" class="link-card">
+          <div class="link-info">
+            <div class="link-icon">💬</div>
+            <div>
+              <div class="link-name">Official VIP Discord Lounge</div>
+              <div class="link-sub">Live Alerts, 1-on-1 C2C Calls, Spin-the-Wheel & Raffles</div>
+            </div>
+          </div>
+          <span class="link-arrow">Join Free →</span>
+        </a>
+
+        <a href="https://onlyfans.com/charlette_webb" target="_blank" rel="noopener" class="link-card">
+          <div class="link-info">
+            <div class="link-icon">💙</div>
+            <div>
+              <div class="link-name">OnlyFans VIP (+3-Hr Video & Snap)</div>
+              <div class="link-sub">3-hour video & private Snapchat included upon joining</div>
+            </div>
+          </div>
+          <span class="link-arrow">Subscribe →</span>
+        </a>
+
+        <a href="https://chaturbate.com/b/charlette_webb_xxx" target="_blank" rel="noopener" class="link-card">
+          <div class="link-info">
+            <div class="link-icon">💧</div>
+            <div>
+              <div class="link-name">Chaturbate Live Room</div>
+              <div class="link-sub">Live Nightly 8:00 PM – 3:00 AM EST</div>
+            </div>
+          </div>
+          <span class="link-arrow">Watch Live →</span>
+        </a>
+
+        <a href="https://stripchat.com/CharletteWebb/follow-me" target="_blank" rel="noopener" class="link-card">
+          <div class="link-info">
+            <div class="link-icon">🔥</div>
+            <div>
+              <div class="link-name">Stripchat Live Stream</div>
+              <div class="link-sub">Live Nightly 8:00 PM – 3:00 AM EST</div>
+            </div>
+          </div>
+          <span class="link-arrow">Watch Live →</span>
+        </a>
+
+        <a href="https://share.myfreecams.com/CharletteWebb/tipmenus" target="_blank" rel="noopener" class="link-card">
+          <div class="link-info">
+            <div class="link-icon">💚</div>
+            <div>
+              <div class="link-name">MyFreeCams (MFC) & Tip Menus</div>
+              <div class="link-sub">Live Cam, Videos & Interactive Tip Menu</div>
+            </div>
+          </div>
+          <span class="link-arrow">Open MFC →</span>
+        </a>
+
+        <a href="https://www.camsoda.com/charlette-webb?id=charlette-webb" target="_blank" rel="noopener" class="link-card">
+          <div class="link-info">
+            <div class="link-icon">🎬</div>
+            <div>
+              <div class="link-name">CamSoda Live Room</div>
+              <div class="link-sub">Live Nightly 8:00 PM – 3:00 AM EST</div>
+            </div>
+          </div>
+          <span class="link-arrow">Watch Live →</span>
+        </a>
+
+        <a href="https://live.manyvids.com/stream/Charlette%20Webb" target="_blank" rel="noopener" class="link-card">
+          <div class="link-info">
+            <div class="link-icon">💦</div>
+            <div>
+              <div class="link-name">ManyVids Live Cam</div>
+              <div class="link-sub">Live Nightly 8:00 PM – 3:00 AM EST</div>
+            </div>
+          </div>
+          <span class="link-arrow">Watch Live →</span>
+        </a>
+
+        <a href="https://www.manyvids.com/Profile/35990/Charlette-Webb/Store/Videos/" target="_blank" rel="noopener" class="link-card">
+          <div class="link-info">
+            <div class="link-icon">🎥</div>
+            <div>
+              <div class="link-name">ManyVids Store (700+ Videos)</div>
+              <div class="link-sub">Browse all 700+ videos or unlock all for $350 via CashApp</div>
+            </div>
+          </div>
+          <span class="link-arrow">View Vault →</span>
+        </a>
+
+        <a href="https://www.manyvids.com/Custom-vid/35990/" target="_blank" rel="noopener" class="link-card">
+          <div class="link-info">
+            <div class="link-icon">✨</div>
+            <div>
+              <div class="link-name">Order a Custom Video</div>
+              <div class="link-sub">Personalized scripts, outfits & name shoutouts</div>
+            </div>
+          </div>
+          <span class="link-arrow">Order Custom →</span>
+        </a>
+
+        <a href="https://www.manyvids.com/Profile/35990/Charlette-Webb/Store/Items/" target="_blank" rel="noopener" class="link-card">
+          <div class="link-info">
+            <div class="link-icon">👙</div>
+            <div>
+              <div class="link-name">Personal Store Items</div>
+              <div class="link-sub">Exclusive personal items & collector pieces</div>
+            </div>
+          </div>
+          <span class="link-arrow">Shop Items →</span>
+        </a>
+
+        <a href="https://cash.app/$CharletteWebb" target="_blank" rel="noopener" class="link-card">
+          <div class="link-info">
+            <div class="link-icon">💸</div>
+            <div>
+              <div class="link-name">CashApp ($CharletteWebb)</div>
+              <div class="link-sub">Direct tips, $350 Mega-Vault, C2C & Spin-the-Wheel</div>
+            </div>
+          </div>
+          <span class="link-arrow">Send Tip →</span>
+        </a>
+
+        <a href="https://throne.com/charlettewebb" target="_blank" rel="noopener" class="link-card">
+          <div class="link-info">
+            <div class="link-icon">🎁</div>
+            <div>
+              <div class="link-name">Throne Official Wishlist</div>
+              <div class="link-sub">Spoil Charlette with outfits, studio gear & VIP gifts</div>
+            </div>
+          </div>
+          <span class="link-arrow">Send Gift →</span>
+        </a>
+
+        <a href="https://x.com/Charlette_WebbX" target="_blank" rel="noopener" class="link-card">
+          <div class="link-info">
+            <div class="link-icon">🐦</div>
+            <div>
+              <div class="link-name">Follow on X (@Charlette_WebbX)</div>
+              <div class="link-sub">Daily previews, updates & live announcements</div>
+            </div>
+          </div>
+          <span class="link-arrow">Follow →</span>
+        </a>
+
+        <a href="mailto:Charlettewebbbooking@gmail.com" class="link-card">
+          <div class="link-info">
+            <div class="link-icon">✉️</div>
+            <div>
+              <div class="link-name">Business & Collaboration Inquiries</div>
+              <div class="link-sub">Charlettewebbbooking@gmail.com</div>
+            </div>
+          </div>
+          <span class="link-arrow">Email →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Official Schedule & VIP Menu Graphics -->
+    <section id="schedule" class="section">
+      <div class="section-header">
+        <h2>📅 Nightly Cam Schedule & Official VIP Menu</h2>
+        <p>Catch me live every single night from 8:00 PM to 3:00 AM EST across all 5 cam platforms.</p>
+      </div>
+      <div class="showcase-two-col">
+        <div class="showcase-card">
+          <img src="assets/schedule_banner.jpg" alt="Charlette Webb Nightly Cam Schedule 8PM to 3AM EST" />
+          <div style="padding: 18px 8px 6px;">
+            <h3 style="font-size: 1.25rem; margin-bottom: 6px;">🕗 Live Nightly: 8:00 PM – 3:00 AM EST</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Join the <a href="https://discord.gg/TBHabwmhu8" target="_blank" style="color: var(--cyan); font-weight: 700;">Official Discord Lounge</a> and grab the <strong>@🔔 Cam Live Alerts</strong> role so your phone pings the exact second I go live.
+            </p>
+          </div>
+        </div>
+        <div class="showcase-card">
+          <img src="assets/vip_menu.jpg" alt="Charlette Webb VIP Tip and Services Menu" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Gallery -->
+    <section id="gallery" class="section">
+      <div class="section-header">
+        <h2>📸 Official Studio Teaser Gallery</h2>
+        <p>A taste of what awaits inside the VIP Lounge, OnlyFans, and my 700+ Video Vault.</p>
+      </div>
+      <div class="photo-grid">
+        <div class="photo-item"><img src="assets/gallery_blue.jpg" alt="Charlette Webb Studio Portrait 1" /></div>
+        <div class="photo-item"><img src="assets/gallery_green.jpg" alt="Charlette Webb Studio Portrait 2" /></div>
+        <div class="photo-item"><img src="assets/gallery_schoolgirl.jpg" alt="Charlette Webb Studio Portrait 3" /></div>
+        <div class="photo-item"><img src="assets/gallery_studio1.jpg" alt="Charlette Webb Studio Portrait 4" /></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="https://discord.gg/TBHabwmhu8" target="_blank" rel="noopener">VIP Discord Server</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service & 18+ Compliance</a>
+      <a href="mailto:Charlettewebbbooking@gmail.com">Contact & Booking</a>
+    </div>
+    <p>© 2026 Charlette Webb • Managed & Powered by <strong>Creator Media Studios (WORKHORSE)</strong>. All Rights Reserved. 18+ Adult Community Hub.</p>
+  </footer>
+
+</body>
+</html>
